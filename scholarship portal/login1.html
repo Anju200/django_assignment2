@@ -1,0 +1,76 @@
+﻿<html>
+<head>
+    <title>login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script>function highlightInput(elm){
+            elm.style.background = "grey";
+        }
+        function myFunction() {
+  var x = document.getElementById("username");
+  x.value = x.value.toUpperCase();
+}</script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="rows">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Lifestyle Store</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="img">
+        <div class="container">
+            <div class="row" style="padding:70px 330px;">
+                <center>
+
+                    <div class="panel panel-primary ">
+                        <div class="panel-heading">
+                            LOGIN
+                        </div>
+                        <div class="panel-body">
+                            <div class="from-group" style="color:black;">
+                                <h6>Login to make a purchase</h6>
+
+                                <form action=".php" style="color:black;">
+                                    <input required type="text" id="username" placeholder="username" onfocus="highlightInput(this)" oninput="myFunction()"><br><br>
+                                    <input required type="password" id="password" placeholder="password" onfocus="highlightInput(this)"><br><br>
+                                    <a href="products.html">  <button type="submit" class="btn btn-primary ">Login</button></a>
+                                </form>
+
+                            </div>
+                        </div>
+                        <div class="panel-footer" style="color:black;">
+                            Don't you have an account?<a href='signup.html'>Register now!</a>
+                        </div>
+                    </div>
+
+                </center>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <center>
+                <p>
+                    Copyright © Lifestyle Store. All Rights Reserved|Contact Us: +91 90000 00000
+                </p>
+            </center>
+        </div>
+    </footer>
+</body>
+</html>

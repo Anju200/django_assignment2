@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+<script>
+    var i = 1;
+
+    function add() {
+        i++;
+        var div = document.createElement('div');
+        var id = i;
+        div.innerHTML = 'hobbie_' + id + ': <input type="text" name="hobbie_' + id + '"/>' + ' <input type="button" id="add_button' + id + '" onclick="add()" value="add" />' + ' <input type="button" id="remove_button' + id + '" onclick="remove(this)" value="remove" />';
+        document.getElementById('hobbies').appendChild(div);
+    }
+
+    function remove(div) {
+        document.getElementById('hobbies').removeChild(div.parentNode);
+        i--;
+    }
+</script>
+</head>
+<body>
+    <form>
+        Name:
+        <input type="text" name="name">
+        <br />
+        <div id="hobbies">
+            hobbies_1:
+            <input type="text" name="child_1">
+            <input type="button" id="add_button" onclick="add()" value="add" />
+        </div>
+        Phone:
+        <input type="text" name="phone">
+        <br />
+        <input type="submit" name="submit" value="submit" />
+    </form>
+</body>
+</html>

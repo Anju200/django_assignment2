@@ -1,0 +1,151 @@
+﻿<html>
+<head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function highlightInput(elm) {
+            elm.style.background = "grey";
+        }
+        function myFunction() {
+  var x = document.getElementById("username");
+  x.value = x.value.toUpperCase();
+        }
+        var i = 1;
+
+        function add() {
+            i++;
+            var div = document.createElement('div');
+            var id = i;
+            div.innerHTML = 'hobbie_' + id + ': <input type="text" name="hobbie_' + id + '"/>' + ' <input type="button" id="add_button' + id + '" onclick="add()" value="add" />' + ' <input type="button" id="remove_button' + id + '" onclick="remove(this)" value="remove" />';
+            document.getElementById('hobbies').appendChild(div);
+        }
+
+        function remove(div) {
+            document.getElementById('hobbies').removeChild(div.parentNode);
+            i--;
+        }
+        function validate(mail, pwd) {
+            var x = /^[a-zA-Z]+\w*\W*@\w*\W*\.(com|co\.in|co\.uk)$/
+            if (mail.match(x)) {
+                alert("Valid Email.")
+            }
+            else { alert("Invalid Email") }
+            var y = /(^[a-zA-Z]+[0-9]+).{8,}$/
+            if (pwd.match(y)) {
+                alert("Valid Password.")
+            }
+            else { alert("Invalid Password") }
+        }
+        function focusFunction(x) {
+            x.style.background = "gray";
+        }
+
+        function blurFunction(y) {
+            // No focus = Changes the background color of input to red
+            y.style.background = "beige";
+        }
+
+
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="rows">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Lifestyle Store</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="imagee">
+        <div class="container">
+            <div class="row" style="padding:70px 330px;">
+                <center>
+
+                    <div class="panel  panel-primary  ">
+                        <div class="panel-heading">
+                            Register
+                        </div>
+                        <div class="panel-body">
+                            <div class="from-group">
+                           
+                                
+                            </div>
+                        </div>
+                        <div>
+                            <label for=" username">username</label>
+                            <input type="text" id="name" placeholder="enter username" onfocus="focusFunction(document.getElementById('name'))" onblur="blurFunction(document.getElementById('name'))" /><br></br>
+                            <label for=" password">password</label>
+                            <input type="password" id="pwd" placeholder="enter password" onfocus="focusFunction(document.getElementById('pwd'))" onblur="blurFunction(document.getElementById('pwd'))" /><br></br>
+                            <label for="email">email</label>
+                            <input type="email" id="mail" placeholder="enter your email" onfocus="focusFunction(document.getElementById('mail'))" onblur="blurFunction(document.getElementById('mail'))" /><br></br>
+                            <label for=" phonenumber">phone number</label>
+                            <input type="phonenumber" id="phn" placeholder="enter phone number" onfocus="focusFunction(document.getElementById('phn'))" onblur="blurFunction(document.getElementById('phn'))" /><br></br>
+                            <p>gender</p>
+                            <input type="radio" name="gender" value="female" />
+                            <label for="female">female</label><br></br>
+                            <input type="radio" name="gender" value="male" />
+                            <label for="male">male</label><br></br>
+
+                            <label for="age">age</label>
+                            <input type="number" placeholder="enter your age" /><br></br>
+                            <label for="address">address</label>
+                            <input type="text" placeholder="enter your address" /><br></br>
+                            <p>location</p>
+                            <select name="location">
+                                <option value="">--select--</option>
+                                <option value="hyderabad">Hyderabad</option>
+                                <option value="khammam">khammam</option>
+                                <option value="mahabubnagar">mahabubnagar</option>
+                            </select>
+                            <p>caste</p>
+                            <input type="radio" name="caste" value="oc" />
+                            <label for="bc">OC</label><br></br>
+                            <input type="radio" name="caste" value="bc" />
+                            <label for="st">BC</label><br></br>
+                            <input type="radio" name="caste" value="st" />
+                            <label for="sc">ST</label><br></br>
+                            <input type="radio" name="caste" value="sc" />
+                            <label for="oc">SC</label><br></br>
+                            <p>physically handicapped</p>
+                            <input type="radio" name="pd" value="yes" />
+                            <label for="yes">yes</label><br></br>
+                            <input type="radio" name="pd" value="no" />
+                            <label for="no">no</label><br></br>
+                            <p>hobbies</p>
+                            <div id="hobbies">
+                                hobbie_1:
+                                <input type="text" name="child_1">
+                                <input type="button" id="add_button" onclick="add()" value="add" /><br></br>
+                            </div>
+                            <a href="products.html"> <button type="submit" class="primary " onclick="alert('details succesfully submited')">Submit</button></a>
+                            <a href="index.html"><button type="submit" class="danger" onclick="alert('please try again!!')">cancel</button></a>
+                        
+                            
+                        </div>
+                        <div class="panel-footer" style="color:black;">
+                            <p class="message">Already registered? <a href="login.html">Back to login</a></p>
+                        </div>
+                    </div>
+
+                </center>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
